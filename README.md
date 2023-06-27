@@ -2,7 +2,7 @@
 
 <div align="center">
   <br/>
-  <h3><b>Awesonme Books (Books-list)</b></h3>
+  <h3><b>Leaderboard</b></h3>
 
 </div>
 
@@ -27,9 +27,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 [Awesome Books] <a name="about-project"></a>
+# 📖 [Leaderboard] <a name="about-project"></a>
 
-**Awesome books** is a simple website that displays a list of books and allows you to add and remove books from that list.
+**Leaderboard** is a simple website that displays a list of scores and allows you to add and remove a score from that list.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -47,10 +47,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Display Books**
-- **Add books with author and title**
-- **Remove them**
-- **save the data in local storage**
+- **Display Scores**
+- **Add score with name and score**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -58,7 +56,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://khanh-devos.github.io/awesome-books/)
+- [Live Demo Link](https://khanh-devos.github.io/LeaderBoardKhanh/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -67,8 +65,7 @@
 ## 💻 Getting Started <a name="getting-started"></a>
 
 - Open your Terminal
-- Navigate to the desired directory to which you want to clone the repository to
-- [Copy & Paste] git clone https://github.com/khanh-devos/awesome-books.git
+- Navigate to the desired directory to which you want to clone the repository to, then clone it down to your computer.
 
 ### Prerequisites
 
@@ -82,7 +79,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-- git clone https://github.com/khanh-devos/awesome-books.git
+- git clone https://github.com/khanh-devos/LeaderBoardKhanh.git
 
 ### Install
 
@@ -128,6 +125,7 @@ You can deploy any service you want.
 
 - [ ] **Styling**
 - [ ] **Animation**
+- [ ] **API**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
