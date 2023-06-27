@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1em 15em;
+  background: bisque;
+  font-size: 15px;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#scoresUl {
+  list-style: none;
+  padding: 0;
+}
+
+.scoreLi:nth-child(odd) {
+  background: orange;
+}
+
+#scoreAdd {
+  padding: 3em 1em;
+}
+
+#scoresForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#formUl {
+  list-style: none;
+  padding: 0;
+  width: fit-content;
+}
+
+.input {
+  max-width: 15em;
+  margin-top: 0.2em;
+}
+
+#formbtn {
+  width: 5em;
+  align-self: flex-end;
+}
+
+#btnli {
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  #main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    padding: 1em 1em;
+  }
+}
