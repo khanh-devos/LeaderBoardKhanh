@@ -5,3 +5,5 @@ import './style.css';
 data.createGameID();
 scores.getScores();
 document.querySelector('#scoresForm').addEventListener('submit', scores.addScore);
+
+document.querySelector('#refreshBtn').addEventListener('click', scores.getScores);
