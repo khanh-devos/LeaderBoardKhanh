@@ -1,21 +1,36 @@
-export const setData = (scores) => {
-  localStorage.setItem('scores', JSON.stringify(scores));
+export const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
+export const game = { id: null };
+const LENGTH = 5;
+
+export const setData = (newScore) => {
+  fetch(`${URL}/${game.id}/scores/`, {
+    method: 'POST',
+    body: JSON.stringify(newScore),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
 };
 
-export const getData = () => (JSON.parse(localStorage.getItem('scores')) || [
-  {
-    index: 1,
-    name: 'k1',
-    score: 5,
-  },
-  {
-    index: 2,
-    name: 'k2',
-    score: 10,
-  },
-  {
-    index: 3,
-    name: 'k3',
-    score: 5,
-  },
-]);
+export const getData = async () => {
+  if (!game.id) return [];
+  const response = await fetch(`${URL}/${game.id}/scores/`);
+  const { result } = await response.json();
+  return result.slice(Math.max(0, result.length - LENGTH));
+};
+
+export const createGameID = () => {
+  fetch(URL, {
+    method: 'POST',
+    body: JSON.stringify({
+      name: 'khanh_game',
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then(async (res) => {
+      const { result } = await res.json();
+      [game.id] = result.split(' ').splice(3, 1);
+    });
+};

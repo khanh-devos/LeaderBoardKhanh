@@ -1,27 +1,24 @@
 import * as data from './data.js';
 
-export function getScores() {
+export const getScores = async () => {
   const ul = document.querySelector('#scoresUl');
   ul.innerHTML = '';
 
-  const listLi = data.getData().map((item) => `
-    <li class='scoreLi'>${item.name} : ${item.score}</li>  
+  const scores = await data.getData();
+  const listLi = scores.map((item) => `
+    <li class='scoreLi'>${item.user} : ${item.score}</li>  
   `);
 
   ul.innerHTML = listLi.join('');
-}
+};
 
-export function addScore(e) {
+export const addScore = async (e) => {
   e.preventDefault();
-  const scores = data.getData();
   const newScore = {
-    index: scores.length + 1,
-    name: e.target.name.value,
-    score: e.target.score.value,
+    user: e.target.user.value,
+    score: Number(e.target.score.value),
   };
 
-  scores.push(newScore);
-  data.setData(scores);
-  getScores();
+  data.setData(newScore);
   e.target.reset();
-}
+};
