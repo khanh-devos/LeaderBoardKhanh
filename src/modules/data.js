@@ -19,8 +19,8 @@ export const getData = async () => {
   return result.slice(Math.max(0, result.length - LENGTH));
 };
 
-export const createGameID = async () => {
-  const response = await fetch(URL, {
+export const createGameID = () => {
+  fetch(URL, {
     method: 'POST',
     body: JSON.stringify({
       name: 'khanh_game',
@@ -28,8 +28,9 @@ export const createGameID = async () => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  });
-
-  const { result } = await response.json();
-  [game.id] = result.split(' ').splice(3, 1);
+  })
+    .then(async (res) => {
+      const { result } = await res.json();
+      [game.id] = result.split(' ').splice(3, 1);
+    });
 };
