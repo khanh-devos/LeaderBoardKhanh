@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 }
 
 .sectionTitle {
@@ -94,6 +94,38 @@ body {
 
 #btnli {
   text-align: right;
+}
+
+#refreshBtn {
+  border: none;
+  text-align: center;
+  width: 2em;
+  background: none;
+  display: block;
+  align-items: center;
+}
+
+#refreshBtn:hover {
+  color: #f45050;
+  transform: scale(1.2);
+}
+
+#refreshBtn:active {
+  color: wheat;
+}
+
+.okAdded {
+  color: green;
+  font-weight: bold;
+}
+
+.material-symbols-outlined {
+  background: none;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
 }
 
 @media screen and (max-width: 768px) {

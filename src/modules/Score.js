@@ -16,7 +16,7 @@ export const addScore = async (e) => {
   e.preventDefault();
   const newScore = {
     user: e.target.user.value,
-    score: Number(e.target.score.value),
+    score: e.target.score.value,
   };
 
   data.setData(newScore);
