@@ -1,4 +1,4 @@
-const createNewElement = ({
+export const createNewElement = ({
   type,
   id,
   className,

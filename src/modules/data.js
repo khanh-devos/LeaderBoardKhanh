@@ -1,3 +1,5 @@
+import okAdded from '../utils/okAdded.js';
+
 export const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
 export const game = { id: null };
 const LENGTH = 5;
@@ -9,7 +11,11 @@ export const setData = (newScore) => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  });
+  })
+    .then(async (res) => {
+      const { result } = await res.json();
+      if (result) okAdded();
+    });
 };
 
 export const getData = async () => {
