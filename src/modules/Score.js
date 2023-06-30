@@ -9,7 +9,7 @@ export const getScores = async () => {
     <li class='scoreLi'>${item.user} : ${item.score}</li>  
   `);
 
-  ul.innerHTML = listLi.join('');
+  ul.innerHTML = listLi.join('') ? listLi.join('') : 'no scores, please add one';
 };
 
 export const addScore = async (e) => {

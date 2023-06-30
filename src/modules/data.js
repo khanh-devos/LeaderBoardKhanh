@@ -13,7 +13,9 @@ export const setData = (newScore) => {
 };
 
 export const getData = async () => {
-  if (!game.id) return [];
+  if (!game.id) {
+    return [];
+  }
   const response = await fetch(`${URL}/${game.id}/scores/`);
   const { result } = await response.json();
   return result.slice(Math.max(0, result.length - LENGTH));
